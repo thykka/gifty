@@ -1,0 +1,19 @@
+{
+  "name": "gifty",
+  "version": "0.0.0",
+  "homepage": "https://github.com/thykka/gifty",
+  "authors": [
+    "Moses Holmström <thykka@zoho.com>"
+  ],
+  "description": "Gift economy network",
+  "main": "index.html",
+  "license": "Unlicense",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
