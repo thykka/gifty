@@ -4,5 +4,12 @@ head
 	title Gifty
 	meta(name="description", content="gift economy social network")
 	meta(name="viewport", content="width=device-width, initial-scale=1.0")
+	| <!---->
+	| <!--[if (gt IE 8) | (IEMobile)]><!-->
 	link(rel="stylesheet", href="app.css")
-	script(src="vendor/live.js")
+	| <!--<![endif]-->
+	| <!--[if (lt IE 9) & (!IEMobile)]>
+	link(rel="stylesheet", href="app-ie.css")
+	| <![endif]-->
+	if livejs
+		script(src="vendor/live.js")

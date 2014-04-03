@@ -22,33 +22,31 @@
  * http://www.fsf.org/licensing/licenses/agpl-3.0.html
  *
  */
+var config = require('./config.json');
 var express = require('express');
-var app = express();
 var sass = require('node-sass');
 var path = require('path');
-var port = 1337;
+var app = express();
+
+app.use(express.errorHandler());
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.locals.pretty = true;
-
-//app.use(app.router);
-app.use(express.errorHandler());
-app.use(sass.middleware({
-	src: __dirname + '/sass',
-	dest: __dirname + '/public',
-//	debug: true,
-	outputStyle: 'expanded'
-}));
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-//app.use(express.logger());
+//app.locals.pretty = true;
 
 // routes
 app.get('/', function(req, res){
-	res.render('index');
+	res.render('index', config.jadeConfig);
 });
 
-app.listen(port);
-console.log('Gifty server started at http://localhost:' + port);
+app.use(sass.middleware({
+	src: __dirname + '/sass',
+	dest: __dirname + '/public',
+	outputStyle: 'expanded'
+}));
+
+app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.listen(config.port);
+console.log('Gifty server started at http://localhost:' + config.port);

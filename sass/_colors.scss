@@ -1,0 +1,37 @@
+$white: #FFFFFF;
+$black: #111111;
+
+$brand-color:     #D96234;
+$accent-color:    #498189;
+$function-color:  #f2f2f2;
+$hilight-color:   #13A548;
+
+$brand-color-lt:     lighten( $brand-color,    10% );
+$brand-color-dk:     darken(  $brand-color,    10% );
+$brand-color-ltr:    lighten( $brand-color,    20% );
+$brand-color-dkr:    darken(  $brand-color,    20% );
+$accent-color-lt:    lighten( $accent-color,   10% );
+$accent-color-dk:    darken(  $accent-color,   10% );
+$accent-color-ltr:   lighten( $accent-color,   20% );
+$accent-color-dkr:   darken(  $accent-color,   20% );
+$function-color-lt:  lighten( $function-color, 10% );
+$function-color-dk:  darken(  $function-color, 10% );
+$function-color-ltr: lighten( $function-color, 20% );
+$function-color-dkr: darken(  $function-color, 20% );
+$hilight-color-lt:   lighten( $hilight-color,  10% );
+$hilight-color-dk:   darken(  $hilight-color,  10% );
+$hilight-color-ltr:  lighten( $hilight-color,  20% );
+$hilight-color-dkr:  darken(  $hilight-color,  20% );
+
+@mixin brand-grad-lt    { @include gradient($brand-color-ltr,    $brand-color);        }
+@mixin brand-grad       { @include gradient($brand-color-lt,     $brand-color-dk);     }
+@mixin brand-grad-dk    { @include gradient($brand-color,        $brand-color-dkr);    }
+@mixin accent-grad-lt   { @include gradient($accent-color-ltr,   $accent-color);       }
+@mixin accent-grad      { @include gradient($accent-color-lt,    $accent-color-dk);    }
+@mixin accent-grad-dk   { @include gradient($accent-color,       $accent-color-dkr);   }
+@mixin function-grad-lt { @include gradient($function-color-ltr, $function-color);     }
+@mixin function-grad    { @include gradient($function-color-lt,  $function-color-dk);  }
+@mixin function-grad-dk { @include gradient($function-color,     $function-color-dkr); }
+@mixin hilight-grad-lt  { @include gradient($hilight-color-ltr,  $hilight-color);      }
+@mixin hilight-grad     { @include gradient($hilight-color-lt,   $hilight-color-dk);   }
+@mixin hilight-grad-dk  { @include gradient($hilight-color,      $hilight-color-dkr);  }

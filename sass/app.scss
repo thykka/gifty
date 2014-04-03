@@ -1,12 +1,48 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "config";
+@import "functions";
+@import "reset";
+@import "colors";
+@import "mixins";
 
 body {
 	box-sizing: border-box;
-	background: #CCC;
+	font-family: $sans;
 }
 h1 {
-	outline: 1px solid red;
+	display: block;
+	font-family: $serif;
+	@include font-size(42);
+	&:hover {
+		@include font-size(64);
+	}
+	@include transition(0.5s);
 }
+.colortest {
+	width: 50%;
+}
+.colortest div {
+	display: inline-block;
+	width: 20%;
+	height: u(3rem);
+	line-height: u(3rem);
+	text-align: center;
+	color: $white;
+	margin: u(4px);
+	@include box-sizing(border-box);
+	@include border-radius(u(0.25rem));
+	background-clip: padding-box;
+	font-weight: bold;
+}
+
+#brand1 { @include brand-grad-lt; }
+#brand2 { @include brand-grad; }
+#brand3 { @include brand-grad-dk; }
+#accent1 { @include accent-grad-lt; }
+#accent2 { @include accent-grad; }
+#accent3 { @include accent-grad-dk; }
+#function1 { color: $black; @include function-grad-lt; }
+#function2 { color: $black; @include function-grad; }
+#function3 { color: $black; @include function-grad-dk; }
+#hilight1 { @include hilight-grad-lt; }
+#hilight2 { @include hilight-grad; }
+#hilight3 { @include hilight-grad-dk; }
