@@ -2,7 +2,7 @@
   "name": "gifty",
   "version": "0.0.1",
   "description": "gift economy social network",
-  "license": "AGPL-3.0",
+  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "http://github.com/thykka/gifty",
     "email": "thykka@zoho.com"
